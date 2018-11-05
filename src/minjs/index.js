@@ -1,0 +1,1 @@
+for(var btn=document.querySelectorAll(".btn"),i=0;i<btn.length;i++)btn[i].onclick=function(){var e=new XMLHttpRequest;e.onreadystatechange=function(){4===e.readyState&&200===e.status&&(console.log(JSON.parse(e.responseText)),window.location.href="search.html")},e.open("get","/api/data",!0),e.send()};
