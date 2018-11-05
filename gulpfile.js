@@ -2,7 +2,7 @@
  * @Author: mikey.ss 
  * @Date: 2018-11-05 08:51:25 
  * @Last Modified by: mikey.ss
- * @Last Modified time: 2018-11-05 09:08:46
+ * @Last Modified time: 2018-11-05 09:23:04
  */
 //引入
 var gulp = require("gulp");
@@ -16,6 +16,10 @@ gulp.task("sass", function() {
     return gulp.src("./src/scss/*.scss")
         .pipe(sass())
         .pipe(gulp.dest("./src/css/"));
+});
+//监听变化
+gulp.task("change", function() {
+    gulp.watch("./src/scss/*.scss", gulp.series("sass"));
 });
 //搭服务器
 gulp.task("server", function() {
